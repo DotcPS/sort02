@@ -1,0 +1,52 @@
+import java.util.Arrays;
+
+public class SortingComparison {
+    public static void main(String[] args) {
+        int[] arraySizes = {10, 1000, 10000, 1000000, 100000000};
+        String[] sortingMethods = {"Insertion Sort", "Bubble Sort", "Quick Sort", "Merge Sort"};
+
+        for (String method : sortingMethods) {
+            System.out.println("Sorting method: " + method);
+            System.out.println("-------------------------");
+
+            for (int size : arraySizes) {
+                int[] arr = generateRandomArray(size);
+
+                long startTime = System.nanoTime();
+                sortArray(arr, method);
+                long endTime = System.nanoTime();
+
+                long duration = endTime - startTime;
+                System.out.println("Array size: " + size + "\tTime taken: " + duration + " ns");
+            }
+
+            System.out.println();
+        }
+    }
+
+    public static int[] generateRandomArray(int size) {
+        int[] arr = new int[size];
+        for (int i = 0; i < size; i++) {
+            arr[i] = (int) (Math.random() * Integer.MAX_VALUE);
+        }
+        return arr;
+    }
+
+    public static void sortArray(int[] arr, String method) {
+        switch (method) {
+            case "Insertion Sort":
+                // Implement Insertion Sort
+                break;
+            case "Bubble Sort":
+                // Implement Bubble Sort
+                break;
+            case "Quick Sort":
+                // Implement Quick Sort
+                break;
+            case "Merge Sort":
+                // Implement Merge Sort
+                break;
+            // Add other sorting methods
+        }
+    }
+}
